@@ -6,8 +6,14 @@ public class StudentController : Controller
 {
   public IActionResult Index(string Fullname)
   {
-    string Message = "Student " + Fullname + " has been created";
-    ViewBag.Message = Message;
+    List<Student> students = new List<Student>();
+    students.Add(new Student() { StudentName = "Nguyen Van A", Age = 20, StudentId = 1 });
+    students.Add(new Student() { StudentName = "Nguyen Van A", Age = 20, StudentId = 1 });
+    students.Add(new Student() { StudentName = "Nguyen Van A", Age = 20, StudentId = 1 });
+    students.Add(new Student() { StudentName = "Nguyen Van A", Age = 20, StudentId = 1 });
+    students.Add(new Student() { StudentName = "Nguyen Van A", Age = 20, StudentId = 1 });
+
+    ViewData["students"] = students;
     return View();
   }
   public IActionResult Create(Student student)

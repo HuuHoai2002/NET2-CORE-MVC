@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Create Employee";
+}
+
+
+<div>
+    <form asp-action="Create">
+        <label for="msv">Ma Employee: </label>
+        <input id="msv" type="number" value="1" name="EmployeeId">
+        <label for="name">Ten Employee: </label>
+        <input type="text" id="name" name="EmployeeName">
+        <label for="tuoi">Tuoi: </label>
+        <input type="text" id="tuoi" name="Age">
+
+        <button type="submit">Gui</button>
+    </form>
+</div>
+
+<h2 style="margin-top: 30px">@ViewBag.Message</h2>
