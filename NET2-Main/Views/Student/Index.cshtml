@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Student Page";
+}
+
+<form asp-action="Index" method="get">
+    <label for="name">Name: </label>
+    <input id="name" type="text" placeholder="Create New" name="Fullname" />
+</form>
+
+<div>
+    @ViewBag.Message
+</div>
