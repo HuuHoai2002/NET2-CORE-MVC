@@ -4,7 +4,7 @@ namespace NET2_Main.Controllers;
 
 public class StudentController : Controller
 {
-  public IActionResult Index(string Fullname)
+  public IActionResult Index()
   {
     List<Student> students = new List<Student>();
     students.Add(new Student() { StudentName = "Nguyen Van A", Age = 20, StudentId = 1 });
@@ -14,6 +14,7 @@ public class StudentController : Controller
     students.Add(new Student() { StudentName = "Nguyen Van A", Age = 20, StudentId = 1 });
 
     ViewData["students"] = students;
+    ViewData["student_count"] = students.Count;
     return View();
   }
   public IActionResult Create(Student student)

@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Person Page";
+}
+<h2>So luong person: @ViewData["person_count"]</h2>
+<div>
+    <table class="table border">
+        <tr>
+            <th>Ma person</th>
+            <th>Ten</th>
+            <th>Tuoi</th>
+        </tr>
+
+        @foreach (var item in ViewData["persons"] as List<Person>)
+        {
+            <tr>
+                <td>@item.PersonId</td>
+                <td>@item.PersonName</td>
+                <td>@item.Age</td>
+            </tr>
+        }
+    </table>
+</div>
