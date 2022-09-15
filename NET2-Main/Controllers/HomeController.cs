@@ -6,6 +6,7 @@ namespace NET2_Main.Controllers;
 
 public class HomeController : Controller
 {
+  GiaiPhuongTrinh gpt = new GiaiPhuongTrinh();
   private readonly ILogger<HomeController> _logger;
 
   public HomeController(ILogger<HomeController> logger)
@@ -13,27 +14,21 @@ public class HomeController : Controller
     _logger = logger;
   }
 
-  public IActionResult Index(string a, string b)
+  public IActionResult Index()
   {
-    if (a != null && b != null)
-    {
-      if (int.Parse(a) != 0)
-      {
-        ViewBag.results = (-int.Parse(b) / int.Parse(a));
-      }
-      else if (int.Parse(a) == 0)
-      {
-        ViewBag.results = "PT vô nghiệm";
-      }
-      else
-      {
-        ViewBag.results = "PT vô số nghiệm";
-      }
-    }
-
     return View();
   }
-
+  public IActionResult GiaiPhuongTrinh()
+  {
+    return View();
+  }
+  [HttpPost]
+  public IActionResult GiaiPhuongTrinh(string hsA, string hsB, string hsC)
+  {
+    string message = gpt.GiaiPTBac2(hsA, hsB, hsC);
+    ViewBag.message = message;
+    return View();
+  }
   public IActionResult Privacy()
   {
     return View();
