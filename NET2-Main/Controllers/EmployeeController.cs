@@ -16,8 +16,15 @@ public class EmployeeController : Controller
 
     ViewData["emps"] = emp;
     ViewData["emp_count"] = emp.Count;
+
     return View();
   }
+  [HttpGet]
+  public IActionResult Create()
+  {
+    return View();
+  }
+  [HttpPost]
   public IActionResult Create(Employee emp)
   {
     string Message = emp.EmployeeId + " - " + emp.EmployeeName + " - " + emp.Age;

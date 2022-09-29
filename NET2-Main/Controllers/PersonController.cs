@@ -18,6 +18,12 @@ public class PersonController : Controller
     ViewData["person_count"] = person.Count;
     return View();
   }
+  [HttpGet]
+  public IActionResult Create()
+  {
+    return View();
+  }
+  [HttpPost]
   public IActionResult Create(Person person)
   {
     string Message = person.PersonId + " - " + person.PersonName + " - " + person.Age;
